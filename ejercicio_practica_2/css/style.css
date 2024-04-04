@@ -1,0 +1,64 @@
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-areas: 
+        "h h h"
+        "s k c"
+        "f f f";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 15% 70% 15%;    
+}
+
+header {
+    grid-area: h;        
+}
+
+#sidebar {
+    grid-area: s;        
+}
+
+section {
+    grid-area: k;        
+}
+
+#chat {
+    grid-area: c;        
+}
+
+footer {
+    grid-area: f;        
+}
+
+header, #sidebar,
+section, #chat,
+footer {
+    border: 4px solid #333;
+    padding: 20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+        grid-template-areas: 
+            "h"
+            "s"
+            "k"
+            "c"
+            "f";
+    }
+}
+
+/* @media only screen and (max-width: 800px) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, minmax(10px, 1fr));
+      grid-template-areas:
+        "h"
+        "s"
+        "k"
+        "c"
+        "f";
+    }
+}   */
